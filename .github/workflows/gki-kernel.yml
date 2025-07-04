@@ -34,12 +34,6 @@ on:
       revision:
         required: false
         type: string
-      secrets:
-      # Secrets must be passed from the calling workflow.
-      TELEGRAM_BOT_TOKEN:
-        required: true
-      TELEGRAM_CHAT_ID:
-        required: true
     
 jobs:
   build-kernel-kernelsu-susfs:
