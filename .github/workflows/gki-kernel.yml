@@ -667,7 +667,14 @@ jobs:
             MESSAGE_TEXT="🚀 **GKI Kernel Build** 🚀%0A%0A*Status: Build complete! Uploading ZIP file...*%0A%0A*Progress:*%0A\`[■■■■■■■■■■]\` 100%%"
             curl -s -X POST "https://api.telegram.org/bot${{ env.TELEGRAM_TOKEN }}/editMessageText" -d "chat_id=${{ env.TELEGRAM_CHAT_ID }}" -d "message_id=${{ env.MESSAGE_ID }}" -d "text=${MESSAGE_TEXT}" -d "parse_mode=Markdown"
 
-            
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: SukiSu-⛈️ThunderBlast⚡
+          path: |
+            *.zip
+            *Image*
+
       - name: Upload Artifact to Telegram
         uses: appleboy/telegram-action@master
         with:
@@ -685,26 +692,19 @@ jobs:
 
             Please find the flashable ZIP attached.
             
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: SukiSu-⛈️ThunderBlast⚡
-          path: |
-            *.zip
-            *Image*
 
-      - name: Upload Release Assets
-        run: |
-          for file in ./downloaded-artifacts/*-kernel-*/*; do
-            if [ -d "$file" ]; then
-              continue
-            fi
-            echo "Uploading $file..."
-            gh release upload ${{ env.NEW_TAG }} "$file"
-          done
+    #  - name: Upload Release Assets
+     #   run: |
+       #   for file in ./downloaded-artifacts/*-kernel-*/*; do
+      #      if [ -d "$file" ]; then
+      #        continue
+      #      fi
+       #     echo "Uploading $file..."
+   #         gh release upload ${{ env.NEW_TAG }} "$file"
+    #      done
 
-      - name: Display Files Uploaded
-        run: |
-          echo "GitHub release created with the following files:"
-          ls ./downloaded-artifacts/**/*
+   #  - name: Display Files Uploaded
+     #   run: |
+   #       echo "GitHub release created with the following files:"
+     #     ls ./downloaded-artifacts/**/*
             
