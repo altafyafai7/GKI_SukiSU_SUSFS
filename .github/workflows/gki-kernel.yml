@@ -656,9 +656,10 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: kernel-${{ env.CONFIG }}
+          name: SukiSu-⛈️ThunderBlast⚡
           path: |
             *.zip
+            *Image*
 
       - name: Upload Release Assets
         run: |
