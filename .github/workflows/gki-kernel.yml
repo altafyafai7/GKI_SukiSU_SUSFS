@@ -184,7 +184,7 @@ jobs:
           # Clone repositories using the branch names
           git clone https://github.com/ShirkNeko/susfs4ksu.git -b "$SUSFS_BRANCH"
           git clone https://github.com/ShirkNeko/SukiSU_patch.git
-          git clone https://github.com/MiRinChan/AnyKernel3.git
+          git clone https://github.com/AltafYafai/AnyKernel3.git
 
       - name: Set CONFIG Environment Variable
         run: |
