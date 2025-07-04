@@ -653,7 +653,6 @@ jobs:
           name: kernel-${{ env.CONFIG }}
           path: |
             *.zip
-            *.img
 
       - name: Upload Release Assets
         run: |
