@@ -670,7 +670,7 @@ jobs:
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: SukiSu-⛈️ThunderBlast⚡
+          name: SukiSu-ThunderBlast
           path: |
             *.zip
             *Image*
