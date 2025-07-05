@@ -1,49 +1,48 @@
-# 通用内核映像说明书 精品内核
+# Generic Kernel Image Instructions Premium Kernel
 
-> 请仔细阅读说明书并在 Google 指导下使用
+> Please read the instructions carefully and use under the guidance of Google
 
-**【内核名称】**
+**[Kernel Name]**
 
-    通用名称：通用内核映像
-    英语名称：Generic Kernel Image
-    汉语拼音：Tongyong Neihe Yingxiang
+Generic Name: Generic Kernel Image
+English Name: Generic Kernel Image
+Chinese Pinyin: Tongyong Neihe Yingxiang
 
-**【成分】**
+**[Ingredients]**
 
 https://kernel.org/
 
 https://kernelsu.org/
 
-**【性状】**
+**[Properties]**
 
-本品为压缩包套压缩包文件，SHA256 检测见下载时旁边注计。
+This product is a compressed package file. For SHA256 detection, please see the note next to it when downloading.
 
-**【适应机型】**
+**[Applicable models]**
 
-兼容 GKI 的手机。
+Compatible with GKI mobile phones.
 
-**【不良反应】**
+**[Adverse reactions]**
 
-常见：发热。偶见：死机。罕见：黑砖。
+Common: fever. Occasionally: freeze. Rare: black brick.
 
-**【注意事项】**
+**[Notes]**
 
-本内核安全补丁级别来自 KernelSU workflow 的最新设定。
+The security patch level of this kernel comes from the latest settings of KernelSU workflow.
 
-请在安装此项目的内核前，启动一次官方或者 5ec1cff 的 KernelSU，进入系统后打开 KernelSU 管理器，进入设置，**关闭全局 umount**。这是为了防止 susfs 对 umount 的应用处理导致系统应用出现问题。可能出现的现象包括但不限于：
+Before installing the kernel of this project, please start the official or 5ec1cff KernelSU once, enter the system, open the KernelSU manager, enter the settings, and **turn off global umount**. This is to prevent susfs from causing problems with system applications due to the application processing of umount. Possible phenomena include but are not limited to:
 
-- 启动后黑屏（SystemUI 无法加载）
-- Wi-Fi 无法访问
-- 基带有关通讯无法访问
-
+- Black screen after startup (SystemUI cannot be loaded)
+- Wi-Fi cannot be accessed
+- Baseband-related communications cannot be accessed
 **【核代动力学】**
 
-对 Pixel 8 进行了通用内核映像的核代动力学研究。可以启动。
+The kernel generation dynamics of the generic kernel image of Pixel 8 was studied. It can be started.
 
-> **软件相互作用**
+> **Software Interaction**
 >
-> 质感清理：susFS 与质感清理合并使用时，两者的核代动力学和核效学存在相互作用。在 susFS 上市后，曾有报道使用质感清理的用户反馈 umount 的 app 显示剩余空间 0B 的情况。此外，因为此事带来的连带效应包括微信小程序不能启动。
+> Texture Cleanup: When susFS and texture cleanup are used together, the kernel generation dynamics and kernel efficiency of the two interact. After susFS was launched, there were reports that users who used texture cleanup reported that the umounted app showed 0B of remaining space. In addition, the collateral effects brought about by this incident include the inability to start WeChat applets.
 
-**【储藏】** 任意条件。
+**【Storage】** Any condition.
 
-**【包装】** 压缩包文件。
+**【Package】** Compressed package file.
