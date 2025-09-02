@@ -182,6 +182,7 @@ jobs:
           # To fix Boot On Los
           cd common
           git revert 973c7a0d8a38e675570c3336c664f5610bd4eb19 --no-edit
+          cd ..
           
       - name: Determine the branch for KernelSU
         run: |
