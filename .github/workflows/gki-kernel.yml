@@ -178,6 +178,11 @@ jobs:
           # Sync repo and apply patches
           $REPO --version
           $REPO --trace sync -c -j$(nproc --all) --no-tags --fail-fast
+
+          # To fix Boot On Los
+          cd common
+          git revert 973c7a0d8a38e675570c3336c664f5610bd4eb19 --no-edit
+          
       - name: Determine the branch for KernelSU
         run: |
           if [[ "${{ inputs.kernelsu_branch }}" == "Stable" && ( "${{ inputs.kernelsu_variant }}" == "SukiSU" ) ]]; then
